@@ -39,12 +39,12 @@ export default function EventRoom(props) {
 
                 <div className="mt-4 flex gap-3 items-center">
                   <a href={registerPCCOE} target="_blank" rel="noopener noreferrer"
-                     className="px-4 py-2 bg-pink-600 hover:bg-pink-700 rounded-full text-white">
+                     className="px-2 py-2 bg-pink-600 hover:bg-pink-700  text-white">
                     Register (PCCOE STUDENT)
                   </a>
 
                   <a href={registerNonPCCOE} target="_blank" rel="noopener noreferrer"
-                     className="px-4 py-2 bg-pink-200 hover:bg-pink-300 rounded-full text-pink-900">
+                     className="px-2 py-2 bg-pink-600 hover:bg-pink-700  text-white">
                     Register (NON PCCOE STUDENT)
                   </a>
 
