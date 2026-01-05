@@ -19,7 +19,11 @@ export default function RootLayout({ children }) {
       <body className={poppins.className}>
         <LaunchScreen />
         <Header />
-        {children}
+
+        {/* Global overflow-safe wrapper */}
+        <main className="w-full max-w-full overflow-x-hidden">
+          {children}
+        </main>
       </body>
     </html>
   );

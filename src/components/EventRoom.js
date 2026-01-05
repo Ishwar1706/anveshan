@@ -14,7 +14,7 @@ export default function EventRoom(props) {
   const lg = 'url(' + encodeURI(logo) + ')';
 
   return (
-    <div className="event-card max-w-4xl mx-auto mb-8 room-3d">
+    <div className="event-card w-full max-w-md md:max-w-4xl mx-auto mb-8 room-3d px-2">
       <div className="room-3d-scene">
         <div className="room-layer layer-back" />
         <div className="room-layer layer-mid" />
@@ -25,7 +25,7 @@ export default function EventRoom(props) {
           <div className="absolute inset-0" style={{ background: 'linear-gradient(180deg, rgba(6,6,10,0.45), rgba(6,6,10,0.6))', zIndex: 1 }} />
 
           <div className="relative z-10">
-            <div className="flex gap-6 items-center">
+            <div className="flex flex-col md:flex-row gap-4 md:gap-6 items-center">
               <div className="relative">
                 <div className="w-32 h-32 md:w-40 md:h-40 rounded bg-center bg-contain bg-no-repeat flex-shrink-0" style={{ backgroundImage: lg, zIndex: 6 }} aria-hidden={true} />
               </div>
@@ -33,7 +33,9 @@ export default function EventRoom(props) {
               <div className="flex-1">
                 <h3 className="text-2xl md:text-3xl font-extrabold">{title}</h3>
                 <p className="text-sm text-muted">{date}</p>
-                <p className="mt-3">{desc}</p>
+                <p className="mt-3 text-xs sm:text-sm break-words whitespace-normal max-w-full">
+  {desc}
+</p>
 
                 <div className="mt-4 flex gap-3 items-center">
                   <a href={registerPCCOE} target="_blank" rel="noopener noreferrer"

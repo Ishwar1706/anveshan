@@ -2,24 +2,28 @@ import Link from "next/link";
 
 export default function Header() {
   return (
-    <header className="site-header">
-      <nav className="container mx-auto flex items-center justify-between py-4 px-6">
-        <div className="flex items-center gap-3">
-          <img src="/assets/avatar/Logos of all events- TECHFEST/ANVESHAN_FINAL_2.png" alt="Anveshan logo" className="w-10 h-10 object-contain" />
-          <div className="logo text-2xl font-extrabold text-pink-600">ANVESHAN</div>
+    <header className="w-full overflow-x-hidden">
+      <nav className="w-full flex items-center justify-between py-3 px-4 md:px-8">
+        
+        {/* Left: Logo + Title */}
+        <div className="flex items-center gap-2 min-w-0">
+          <img
+            src="/assets/avatar/Logos of all events- TECHFEST/ANVESHAN_FINAL_2.png"
+            alt="Anveshan logo"
+            className="w-8 h-8 md:w-10 md:h-10 object-contain shrink-0"
+          />
+          <span className="text-sm sm:text-base md:text-2xl font-extrabold text-pink-600 truncate">
+            ANVESHAN
+          </span>
         </div>
 
-        <ul className="flex gap-6 items-center">
+        {/* Desktop Navigation */}
+        <ul className="hidden md:flex gap-6 items-center">
           <li>
             <Link href="/" className="hover:underline">
               Home
             </Link>
           </li>
-         {/* <li>
-            <Link href="/about-us" className="hover:underline">
-              About Us
-            </Link>
-          </li> */}
           <li>
             <Link href="/events" className="hover:underline">
               Events
@@ -36,6 +40,12 @@ export default function Header() {
             </Link>
           </li>
         </ul>
+
+        {/* Mobile Menu Icon (for now just visual) */}
+        <button className="md:hidden text-xl font-bold">
+          ☰
+        </button>
+
       </nav>
     </header>
   );
