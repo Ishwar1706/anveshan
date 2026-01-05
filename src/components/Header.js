@@ -23,7 +23,7 @@ export default function Header() {
         </div>
 
         {/* Desktop Navigation */}
-        <ul className="hidden md:flex gap-6 items-center">
+        <ul className="hidden md:flex gap-6 items-center text-pink-600">
           <li><Link href="/">Home</Link></li>
           <li><Link href="/events">Events</Link></li>
           <li><Link href="/team">Team</Link></li>

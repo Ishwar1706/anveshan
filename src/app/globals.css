@@ -260,3 +260,13 @@ body {
   max-width: 100%;
   overflow-x: hidden;
 }
+
+/* Global fixed background */
+.app-background {
+  background-image: url("/assets/moons.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center top;
+  background-attachment: fixed; /* 🔑 KEY LINE */
+  min-height: 100vh;
+}

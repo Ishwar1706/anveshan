@@ -29,15 +29,21 @@ style={{
     className="w-36 h-36 md:w-48 md:h-48 object-contain"
   />
 
-  <div className="bg-white/10 px-6 py-4 rounded-xl backdrop-blur-sm w-full max-w-md">
+  <div className="bg-white/0 px-6 py-4 rounded-xl  w-full max-w-md">
     <div className="text-center">
-      <h1 className="text-4xl md:text-5xl font-bold text-purple-900 drop-shadow-xl">
-        ANVESHAN 2026
-      </h1>
+      <h1
+  className="text-4xl md:text-5xl font-bold text-yellow-200 drop-shadow-xl"
+  style={{
+    WebkitTextStroke: "1.5px rgba(109, 39, 211, 0.35)",
+   // WebkitTextStroke: "1.5px rgba(240, 235, 143, 1)",
+    textShadow: "0 0 8px rgba(103, 36, 211, 0.35)",
+  }}
+>
+  ANVESHAN 2026
+</h1>
 
-      <p className="mt-2 text-lg text-yellow-300 max-w-2xl">
-        A Tech Fest where innovation awakens in the shadows.
-      </p>
+
+    
     </div>
   </div>
 </div>
