@@ -17,9 +17,9 @@ export default function TeamSection({ title = 'Event Team', coordinators = [], a
   // Render any number of coordinators and members provided; each item can be a string or { name, photo }
 
   return (
-    <section className="team-section transylvania-bg py-8 px-6 my-6 max-w-3xl mx-auto relative overflow-visible">
-      <div className="card transform -skew-y-0 hover:skew-y-0 transition-all duration-500">
-        <h2 className="team-title text-2xl text-center mb-4">{title}</h2>
+    <section className="team-section py-8 px-6 my-6 max-w-3xl mx-auto relative overflow-visible">
+      <div className="card transform -skew-y-0 hover:skew-y-0 transition-all duration-500 bg-transparent p-0 border-0 shadow-none">
+        <h2 className="team-title text-2xl text-center mb-4 text-white font-semibold">{title}</h2>
 
         <div className="slots coordinators flex flex-wrap justify-center gap-6 mb-6">
           {coordinators && coordinators.length > 0 ? (
@@ -46,8 +46,8 @@ export default function TeamSection({ title = 'Event Team', coordinators = [], a
                       <div className="avatar-placeholder">{initials(name)}</div>
                     )}
                   </div>
-                  <div className="name mt-3">{name}</div>
-                  <div className="role text-sm opacity-80">{roleLabel}</div>
+                  <div className="name mt-3 text-white font-semibold">{name}</div>
+                  <div className="role text-sm text-white font-semibold">{roleLabel}</div>
                 </div>
               )
             })
@@ -72,8 +72,8 @@ export default function TeamSection({ title = 'Event Team', coordinators = [], a
                       <div className="avatar-placeholder">{initials(name)}</div>
                     )}
                   </div>
-                  <div className="name mt-3">{name}</div>
-                  <div className="role text-sm opacity-80">{roleLabel}</div>
+                  <div className="name mt-3 text-white font-semibold">{name}</div>
+                  <div className="role text-sm text-white font-semibold">{roleLabel}</div>
                 </div>
               )
             })}
@@ -94,8 +94,8 @@ export default function TeamSection({ title = 'Event Team', coordinators = [], a
                       <div className="avatar-placeholder">{initials(name)}</div>
                     )}
                   </div>
-                  <div className="name mt-2">{name}</div>
-                  <div className="role text-sm opacity-80">Member</div>
+                  <div className="name mt-2 text-white font-semibold">{name}</div>
+                  <div className="role text-sm text-white font-semibold">Member</div>
                 </div>
               )
             })

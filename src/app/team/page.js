@@ -119,7 +119,7 @@ export default function TeamPage() {
     >
       <div className="container mx-auto px-6">
         <h6 className="text-3xl text-center mb-6" style={{ textShadow: '0 6px 30px rgba(120,40,200,0.6)' }}>
-          Team
+          Organizing Committee
         </h6>
 
         {/* Render only one event at a time */}
@@ -135,7 +135,7 @@ export default function TeamPage() {
           <button aria-label="Previous event" className="arrow-btn" onClick={prev}>
             ‹
           </button>
-          <div className="arrow-label">{events[index].title} — {index + 1}/{events.length}</div>
+          <div className="arrow-label text-white font-semibold">{events[index].title} — {index + 1}/{events.length}</div>
           <button aria-label="Next event" className="arrow-btn" onClick={next}>
             ›
           </button>

@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export default function EventRoom(props) {
   const {
     title = '',
@@ -8,52 +10,79 @@ export default function EventRoom(props) {
     coordinatorContact = null,
     registerPCCOE = '#',
     registerNonPCCOE = '#',
+    slug = null,
+    showDetails = false,
+    variant = 'default',
   } = props;
 
   const bg = 'url(' + encodeURI(image) + ')';
   const lg = 'url(' + encodeURI(logo) + ')';
 
+  const isDetail = variant === 'detail';
+  const isCompact = !isDetail;
+
   return (
-    <div className="event-card w-full max-w-md md:max-w-4xl mx-auto mb-8 room-3d px-2">
+    <div className={`event-card w-full ${isCompact ? 'max-w-xl md:max-w-2xl' : 'max-w-4xl md:max-w-5xl'} mx-auto mb-8 room-3d px-2`}>
       <div className="room-3d-scene">
         <div className="room-layer layer-back" />
         <div className="room-layer layer-mid" />
         <div className="room-layer layer-front" />
 
-        <div className="relative rounded-2xl overflow-hidden border p-6 card-surface" style={{ transformStyle: 'preserve-3d' }}>
+        <div className={`relative rounded-2xl overflow-hidden border ${isDetail ? 'p-8 md:p-10' : 'p-6'} card-surface`} style={{ transformStyle: 'preserve-3d' }}>
           <div className="absolute inset-0 bg-center bg-cover" style={{ backgroundImage: bg, zIndex: 0 }} />
           <div className="absolute inset-0" style={{ background: 'linear-gradient(180deg, rgba(6,6,10,0.45), rgba(6,6,10,0.6))', zIndex: 1 }} />
 
           <div className="relative z-10">
-            <div className="flex flex-col md:flex-row gap-4 md:gap-6 items-center">
+            <div className={`flex ${isCompact ? 'flex-row' : 'flex-col md:flex-row'} gap-4 md:gap-6 items-center`}>
               <div className="relative">
-                <div className="w-32 h-32 md:w-40 md:h-40 rounded bg-center bg-contain bg-no-repeat flex-shrink-0" style={{ backgroundImage: lg, zIndex: 6 }} aria-hidden={true} />
+                <div className={`${isCompact ? 'w-20 h-20 md:w-28 md:h-28' : isDetail ? 'w-44 h-44 md:w-56 md:h-56' : 'w-32 h-32 md:w-40 md:h-40'} rounded bg-center bg-contain bg-no-repeat flex-shrink-0`} style={{ backgroundImage: lg, zIndex: 6 }} aria-hidden={true} />
               </div>
 
               <div className="flex-1">
-                <h3 className="text-2xl md:text-3xl font-extrabold">{title}</h3>
+                <h3 className={`${isCompact ? 'text-xl' : 'text-2xl md:text-3xl'} font-extrabold`}>{title}</h3>
                 <p className="text-sm text-muted">{date}</p>
-                <p className="mt-3 text-xs sm:text-sm break-words whitespace-normal max-w-full">
-  {desc}
-</p>
+                <p
+                  className="mt-3 text-xs sm:text-sm break-words whitespace-normal max-w-full"
+                  style={isCompact ? { display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' } : {}}
+                >
+                  {desc}
+                </p>
 
-                <div className="mt-4 flex gap-3 items-center">
-                  <a href={registerPCCOE} target="_blank" rel="noopener noreferrer"
-                     className="px-2 py-2 bg-pink-600 hover:bg-pink-700  text-white">
-                    Register (PCCOE STUDENT)
-                  </a>
+                <div className="mt-4 flex flex-col sm:flex-row sm:items-center gap-3">
+                  {isDetail ? (
+                    <>
+                      <div className="flex flex-wrap gap-3">
+                        <a href={registerPCCOE} target="_blank" rel="noopener noreferrer" className="px-3 py-2 bg-red-800 hover:bg-white/40 text-white rounded">
+                          Register (PCCOE STUDENT)
+                        </a>
 
-                  <a href={registerNonPCCOE} target="_blank" rel="noopener noreferrer"
-                     className="px-2 py-2 bg-pink-600 hover:bg-pink-700  text-white">
-                    Register (NON PCCOE STUDENT)
-                  </a>
+                        <a href={registerNonPCCOE} target="_blank" rel="noopener noreferrer" className="px-3 py-2 bg-purple-900 hover:bg-white/40 text-white rounded">
+                          Register (NON PCCOE STUDENT)
+                        </a>
 
-                  {coordinatorContact && (
-                    <a href={`tel:${coordinatorContact}`} aria-label={`Call coordinator ${coordinatorContact}`} className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/5 hover:bg-white/10 text-white" title={`Call ${coordinatorContact}`}>
-                      <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.86 19.86 0 0 1-3.07-8.63A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12 1.21.38 2.39.76 3.5a2 2 0 0 1-.45 2.11L8.09 11.91a16 16 0 0 0 6 6l1.57-1.57a2 2 0 0 1 2.11-.45c1.11.38 2.29.64 3.5.76A2 2 0 0 1 22 16.92z" />
-                      </svg>
-                    </a>
+                        {props.rulebook && (
+                          <a href={props.rulebook} target="_blank" rel="noopener noreferrer" className="px-3 py-2 bg-white/20 hover:bg-white/20 text-white rounded">
+                            RULEBOOK
+                          </a>
+                        )}
+                      </div>
+
+                      
+
+                      <div className="mt-4 text-white/90">
+                        <div className="text-sm">{props.coordinatorName} : <a href={`tel:${coordinatorContact}`} className="underline">{coordinatorContact}</a></div>
+
+                        <div className="mt-3 text-sm">{props.coordinatorName2 || ''} : {props.coordinatorContact2 ? <a href={`tel:${props.coordinatorContact2}`} className="underline">{props.coordinatorContact2}</a> : ''}</div>
+
+                        <div className="mt-4 text-sm text-yellow-200">Free for PCCOE students | Paid for NON-PCCOE students</div>
+                      </div>
+                    </>
+                  ) : (
+                    <>
+                      {showDetails && slug && (
+                        <a href={`/events/${encodeURIComponent(String(slug))}`} className="ml-2 px-3 py-2 bg-white/10 hover:bg-white/20 text-white rounded">Details</a>
+                      )}
+                    </>
                   )}
                 </div>
               </div>
