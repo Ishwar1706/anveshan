@@ -49,11 +49,11 @@ body {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(26, 25, 25, 0);
-  backdrop-filter: blur(6px);
+  background: rgba(25, 25, 26, 0);
+  backdrop-filter: blur(10px);
 }
 .site-header a{
-  color: #dd18b2;
+  color: #cabcc7;
   text-decoration: none;
 }
 .site-header .logo{
@@ -85,7 +85,7 @@ body {
   color: #f6e6ff;
   text-shadow: 0 2px 12px rgba(130,30,180,0.6);
   font-family: Georgia, 'Times New Roman', serif;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
 }
 
 /* Avatar slot */
@@ -112,8 +112,8 @@ body {
 }
 
 /* Names & roles */
-.slot .name { color: #fff; font-weight:600; }
-.slot .role { color: #d1b8ff; }
+.slot .name { color: #f1f507; font-weight:600; }
+.slot .role { color: #f0eeed; }
 
 /* Bats animation */
 .bats { position: absolute; left: -10%; right:-10%; top: -10%; height: 120px; pointer-events:none; z-index:1; opacity:0.9; }
@@ -147,7 +147,7 @@ body {
   box-shadow: 0 10px 28px rgba(0,0,0,0.6), 0 0 10px rgba(160,40,220,0.06) inset;
   transition: transform .18s ease, background .18s ease, color .12s ease;
   font-weight:700;
-  font-size:20px;
+  font-size:40px;
 }
 .arrow-btn:hover { transform: translateY(-3px) scale(1.03); background: linear-gradient(180deg, rgba(255,255,255,0.18), rgba(255,255,255,0.08)); }
 .arrow-label { color:#d8c1ff; font-size:14px; }

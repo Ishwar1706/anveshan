@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo } from 'react';
+import { useMemo, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 import events from '../../../data/events';
 import EventRoom from '../../../components/EventRoom';
@@ -45,22 +45,44 @@ export default function EventDetailClient() {
               </li>
             ))}
           </ul>
-          <Link href="/events" className="mt-4 inline-block text-pink-500">Back to events</Link>
+          <Link href="/events" className="mt-4 inline-block text-pink-500 font-bold">Back to events</Link>
         </div>
       </main>
     );
   }
 
-  const pageStyle = event && event.image ? {
-    backgroundImage: `url(${event.image})`,
-    backgroundSize: 'cover',
-    backgroundRepeat: 'no-repeat',
-    backgroundPosition: 'center center',
-  } : {};
+  useEffect(() => {
+    if (!event) return;
+    const prev = {
+      backgroundImage: document.body.style.backgroundImage,
+      backgroundSize: document.body.style.backgroundSize,
+      backgroundRepeat: document.body.style.backgroundRepeat,
+      backgroundPosition: document.body.style.backgroundPosition,
+      backgroundAttachment: document.body.style.backgroundAttachment,
+    };
+    if (event.image) {
+      document.body.style.backgroundImage = `url(${event.image})`;
+      document.body.style.backgroundSize = 'cover';
+      document.body.style.backgroundRepeat = 'no-repeat';
+      document.body.style.backgroundPosition = 'center center';
+      document.body.style.backgroundAttachment = 'fixed';
+    } else {
+      // clear to allow default app background
+      document.body.style.backgroundImage = '';
+      document.body.style.backgroundAttachment = '';
+    }
+    return () => {
+      document.body.style.backgroundImage = prev.backgroundImage || '';
+      document.body.style.backgroundSize = prev.backgroundSize || '';
+      document.body.style.backgroundRepeat = prev.backgroundRepeat || '';
+      document.body.style.backgroundPosition = prev.backgroundPosition || '';
+      document.body.style.backgroundAttachment = prev.backgroundAttachment || '';
+    };
+  }, [event]);
 
   return (
-    <main className="text-white min-h-screen py-12 relative" style={pageStyle}>
-      <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" aria-hidden="true" />
+    <main className="text-white min-h-screen py-12 relative">
+      {/* removed overlay so background image shows beneath the fixed header */}
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="mb-6">

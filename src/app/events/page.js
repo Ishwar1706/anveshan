@@ -7,7 +7,7 @@ export default function EventsPage() {
   const [first, ...rest] = events;
 
   return (
-    <main className="bg-black text-white relative overflow-hidden min-h-screen" style={{ backgroundImage: "url('/assets/moons.png')", backgroundSize: 'cover', backgroundRepeat: 'no-repeat', backgroundPosition: 'center top' }}>
+    <main className="text-white relative overflow-hidden min-h-screen">
       <div className="container mx-auto px-6 py-12">
         <h1 className="text-4xl md:text-5xl font-extrabold text-center mb-10">Events</h1>
 

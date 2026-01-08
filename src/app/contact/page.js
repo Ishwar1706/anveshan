@@ -1,16 +1,6 @@
 export default function ContactPage() {
   return (
-    <main
-      className="bg-black text-white relative overflow-hidden min-h-screen flex items-center justify-center"
-      style={{
-        backgroundImage: "url('/assets/moons.png')",
-        backgroundSize: 'contain',
-        minHeight: '100vh',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-      }}
-    >
+    <main className="text-white relative overflow-hidden min-h-screen flex items-center justify-center">
       <div className="container mx-auto px-6 py-16">
         <div
           className="max-w-4xl mx-auto rounded-xl p-6 md:p-10 backdrop-blur-sm"
