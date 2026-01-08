@@ -50,14 +50,14 @@ body {
   top: 0;
   z-index: 50;
   background: rgba(25, 25, 26, 0);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(1000px);
+}
+.site-header a{
+   backdrop-filter: blur(10px);
 }
 .site-header a{
   color: #cabcc7;
-  text-decoration: none;
-}
-.site-header .logo{
-  letter-spacing: 0.5px;
+spacing: 0.5px;
 }
 
 /* Transylvania theme for team cards */
@@ -266,7 +266,7 @@ body {
   background-image: url("/assets/moons.png");
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center top;
+  background-position: center ;
   background-attachment: fixed; /* 🔑 KEY LINE */
   min-height: 100vh;
 }

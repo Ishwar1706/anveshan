@@ -45,7 +45,7 @@ export default function EventDetailClient() {
               </li>
             ))}
           </ul>
-          <Link href="/events" className="mt-4 inline-block text-pink-500 font-bold">Back to events</Link>
+          <Link href="/events" className="mt-4 inline-block text-pink-900 font-bold">Back to events</Link>
         </div>
       </main>
     );
@@ -95,7 +95,11 @@ export default function EventDetailClient() {
         {/* Poster section: demo poster for now — will be replaced per-event later */}
         <div className="max-w-4xl mx-auto mt-6">
           <div className="rounded-lg shadow-lg bg-black/40">
-            <img src="/assets/posterlast.jpeg" alt={`${event.title} poster`} className="w-full h-auto block" />
+            <img
+              src={event.poster || '/assets/posterlast.jpeg'}
+              alt={`${event.title} poster`}
+              className="w-full h-auto block"
+            />
           </div>
         </div>
       </div>

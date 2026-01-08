@@ -32,7 +32,7 @@ export default function Header() {
           </div>
 
           {/* Desktop Navigation */}
-          <ul className="hidden md:flex gap-6 items-center text-blue-200">
+          <ul className="hidden md:flex gap-6 items-center text-blue-300">
             
             <li><Link href="/">Home</Link></li>
             <li><Link href="/events">Register & Explore</Link></li>
@@ -42,7 +42,7 @@ export default function Header() {
 
           {/* Mobile Hamburger */}
           <button
-            className="md:hidden text-2xl font-bold text-blue-200"
+            className="md:hidden text-2xl font-bold text-yellow-100"
             aria-label="Toggle navigation"
             onClick={() => setMenuOpen(!menuOpen)}
           >
@@ -52,25 +52,25 @@ export default function Header() {
 
         {/* Mobile Menu */}
         {menuOpen && (
-          <div className="md:hidden bg-transparent">
-            <ul className="flex flex-col items-center gap-4 py-6">
+          <div className="md:hidden bg-yellow-100">
+            <ul className="flex flex-col items-center gap-4 py-6 text-blue-900">
               <li>
-                <Link href="/" onClick={() => setMenuOpen(false)}>
+                <Link href="/" onClick={() => setMenuOpen(false)} className="w-full text-center py-2">
                   Home
                 </Link>
               </li>
               <li>
-                <Link href="/events" onClick={() => setMenuOpen(false)}>
-                  Events
+                <Link href="/events" onClick={() => setMenuOpen(false)} className="w-full text-center py-2">
+                  Explore & Register
                 </Link>
               </li>
               <li>
-                <Link href="/team" onClick={() => setMenuOpen(false)}>
-                  Team
+                <Link href="/team" onClick={() => setMenuOpen(false)} className="w-full text-center py-2">
+                  Organizing Committee
                 </Link>
               </li>
               <li>
-                <Link href="/contact" onClick={() => setMenuOpen(false)}>
+                <Link href="/contact" onClick={() => setMenuOpen(false)} className="w-full text-center py-2">
                   Contact
                 </Link>
               </li>
