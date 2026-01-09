@@ -11,7 +11,7 @@ const raw = [
     coordinatorContact: '7887589570',
     coordinatorName2: 'Om Kawad',
     coordinatorContact2: '8805567177',
-    rulebook: '#',
+    rulebook: '/assets/RULEBOOK/Chakava RuleBook_compressed.pdf',
     poster: '/assets/Chakava.png',
   },
   {
@@ -26,7 +26,7 @@ const raw = [
     coordinatorContact: '7218599251',
     coordinatorName2: 'Siddhesh Sarphale',
     coordinatorContact2: '9325084691',
-    rulebook: '#',
+    rulebook: '/assets/RULEBOOK/ML Mania Rulebook (2)_compressed.pdf',
     poster: '/assets/ML Mania.png',
   },
   {
@@ -41,7 +41,7 @@ const raw = [
     coordinatorContact: '9309450742',
     coordinatorName2: 'Suhani Thakare',
     coordinatorContact2: '7420072726',
-    rulebook: '#',
+    rulebook: '/assets/RULEBOOK/Sambhashini Rulebook_compressed.pdf',
     poster: '/assets/Sambhashini.png',
   },
   {
@@ -56,7 +56,7 @@ const raw = [
     coordinatorContact: '9503404808',
     coordinatorName2: 'Yadnesh Patil',
     coordinatorContact2: ' 7249334939',
-    rulebook: '#',
+    rulebook: '/assets/RULEBOOK/Spike_Showdown_Rulebook_compressed.pdf',
     poster: '/assets/Spike Showdown.png',
   },
   {
