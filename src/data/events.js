@@ -71,7 +71,7 @@ const raw = [
     coordinatorContact: ' 8408812416',
     coordinatorName2: 'Nihar Salvi',
     coordinatorContact2: ' 8265076942',
-    rulebook: '#',
+    rulebook: '/assets/RULEBOOK/Logic Lamp Rulebook_compressed.pdf',
     poster: '/assets/Logic lamp.png',
   },
 ];
