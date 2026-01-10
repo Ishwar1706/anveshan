@@ -10,7 +10,7 @@ export default function EventsPage() {
   return (
     <main className="text-pink-600 relative overflow-hidden min-h-screen">
       <div className="container mx-auto px-6 py-12">
-        <h1 className="text-4xl md:text-7xl font-bold text-center mb-10">Events</h1>
+        <h1 className="text-4xl md:text-4xl font-bold text-center mb-10">Events</h1>
 
         <div className="mb-10 flex justify-center">
           <div className="w-full max-w-3xl">
