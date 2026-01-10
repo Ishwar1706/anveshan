@@ -32,12 +32,11 @@ export default function Header() {
           </div>
 
           {/* Desktop Navigation */}
-          <ul className="hidden md:flex gap-6 items-center text-blue-300">
-            
-            <li><Link href="/">Home</Link></li>
-            <li><Link href="/events">Register & Explore</Link></li>
-            <li><Link href="/team">Organizing Committee</Link></li>
-            <li><Link href="/contact">Contact</Link></li>
+          <ul className="hidden md:flex gap-6 items-center font-bold text-pink-600">
+            <li><Link href="/" className="header-link">Home</Link></li>
+            <li><Link href="/events" className="header-link">Register & Explore</Link></li>
+            <li><Link href="/team" className="header-link">Organizing Committee</Link></li>
+            <li><Link href="/contact" className="header-link">Contact</Link></li>
           </ul>
 
           {/* Mobile Hamburger */}

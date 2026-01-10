@@ -152,6 +152,41 @@ spacing: 0.5px;
 .arrow-btn:hover { transform: translateY(-3px) scale(1.03); background: linear-gradient(180deg, rgba(255,255,255,0.18), rgba(255,255,255,0.08)); }
 .arrow-label { color:#d8c1ff; font-size:14px; }
 
+/* Desktop header link hover: yellow rounded rectangle behind text */
+.header-link {
+  position: relative;
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 10px;
+  color: inherit;
+  transition: color .12s ease;
+}
+.header-link::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%) scaleX(0);
+  transform-origin: left center;
+  height: 64%;
+  background: linear-gradient(90deg, rgba(245, 213, 5, 0.925), rgba(255,215,90,0.08));
+  border-radius: 10px;
+  z-index: -1;
+  transition: transform .18s ease, opacity .18s ease, box-shadow .18s ease;
+  opacity: 0;
+}
+.header-link:hover::before,
+.header-link:focus::before {
+  transform: translateY(-50%) scaleX(1);
+  opacity: 1;
+  box-shadow: 0 12px 30px rgba(250, 185, 21, 0.12);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .header-link::before { transition: none; transform: translateY(-50%) scaleX(1); opacity: 1; }
+}
+
 /* Events carousel styles */
 .event-wrapper { perspective: 1200px; }
 .event-card { transform-style: preserve-3d; transition: transform .6s cubic-bezier(.2,.8,.2,1), box-shadow .3s ease; }
@@ -263,10 +298,16 @@ body {
 
 /* Global fixed background */
 .app-background {
-  background-image: url("/assets/moons.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center ;
-  background-attachment: fixed; /* 🔑 KEY LINE */
+  /* Dark translucent overlay above the background image to increase clarity/readability */
+  background-image:
+    linear-gradient(rgba(6,6,10,0.65), rgba(8,8,14,0.65)),
+    radial-gradient(circle at 10% 20%, rgba(80,30,140,0.12), transparent 18%),
+    url("/assets/moons.png");
+  background-repeat: no-repeat, no-repeat, no-repeat;
+  background-size: cover, cover, cover;
+  background-position: center, center, center;
+  background-attachment: fixed, fixed, fixed; /* keep background fixed */
   min-height: 100vh;
+  /* subtle top vignette for readability */
+  box-shadow: inset 0 120px 160px rgba(0,0,0,0.28), inset 0 -80px 140px rgba(0,0,0,0.12);
 }

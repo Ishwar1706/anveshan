@@ -1,4 +1,6 @@
+"use client"
 import React from 'react'
+import MotionFadeUp from './MotionFadeUp'
 
 function getName(item) {
   return typeof item === 'string' ? item : (item && item.name) || 'Unknown'
@@ -38,7 +40,7 @@ export default function TeamSection({ title = 'Event Team', coordinators = [], a
                 roleLabel = item.role
               }
               return (
-                <div key={idx} className="slot coord flex flex-col items-center text-center">
+                <MotionFadeUp key={idx} delay={idx * 0.04} className="slot coord flex flex-col items-center text-center">
                   <div className="avatar">
                     {photo ? (
                       <img src={photo} alt={name} />
@@ -48,7 +50,7 @@ export default function TeamSection({ title = 'Event Team', coordinators = [], a
                   </div>
                   <div className="name mt-3 text-white font-semibold">{name}</div>
                   <div className="role text-sm text-white font-semibold">{roleLabel}</div>
-                </div>
+                </MotionFadeUp>
               )
             })
           ) : (
@@ -64,7 +66,7 @@ export default function TeamSection({ title = 'Event Team', coordinators = [], a
               // allow advisory items to provide an explicit role label
               const roleLabel = item && typeof item === 'object' && item.role ? item.role : 'Advisory'
               return (
-                <div key={idx} className="slot advisor flex flex-col items-center text-center">
+                <MotionFadeUp key={idx} delay={idx * 0.04} className="slot advisor flex flex-col items-center text-center">
                   <div className="avatar">
                     {photo ? (
                       <img src={photo} alt={name} />
@@ -74,7 +76,7 @@ export default function TeamSection({ title = 'Event Team', coordinators = [], a
                   </div>
                   <div className="name mt-3 text-white font-semibold">{name}</div>
                   <div className="role text-sm text-white font-semibold">{roleLabel}</div>
-                </div>
+                </MotionFadeUp>
               )
             })}
           </div>
@@ -86,7 +88,7 @@ export default function TeamSection({ title = 'Event Team', coordinators = [], a
               const name = getName(item)
               const photo = getPhoto(item)
               return (
-                <div key={idx} className="slot member flex flex-col items-center text-center">
+                <MotionFadeUp key={idx} delay={idx * 0.04} className="slot member flex flex-col items-center text-center">
                   <div className="avatar small">
                     {photo ? (
                       <img src={photo} alt={name} />
@@ -96,7 +98,7 @@ export default function TeamSection({ title = 'Event Team', coordinators = [], a
                   </div>
                   <div className="name mt-2 text-white font-semibold">{name}</div>
                   <div className="role text-sm text-white font-semibold">Member</div>
-                </div>
+                </MotionFadeUp>
               )
             })
           ) : (

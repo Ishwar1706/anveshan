@@ -1,4 +1,6 @@
+"use client"
 import Link from 'next/link';
+import HoverCard from '../components/HoverCard'
 
 export default function EventRoom(props) {
   const {
@@ -22,7 +24,7 @@ export default function EventRoom(props) {
   const isCompact = !isDetail;
 
   return (
-    <div className={`event-card w-full ${isCompact ? 'max-w-xl md:max-w-2xl' : 'max-w-4xl md:max-w-5xl'} mx-auto mb-8 room-3d px-2`}>
+    <HoverCard className={`event-card w-full ${isCompact ? 'max-w-xl md:max-w-2xl' : 'max-w-4xl md:max-w-5xl'} mx-auto mb-8 room-3d px-2`}>
       <div className="room-3d-scene">
         <div className="room-layer layer-back" />
         <div className="room-layer layer-mid" />
@@ -91,6 +93,6 @@ export default function EventRoom(props) {
 
         </div>
       </div>
-    </div>
+    </HoverCard>
   );
 }

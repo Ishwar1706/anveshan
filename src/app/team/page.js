@@ -77,7 +77,7 @@ export default function TeamPage() {
       coordinators: [
         { name: 'Onkar Chand', photo: '/assets/avatar/onkarcrop.jpg' },
         { name: 'Yadnesh Patil', photo: '/assets/avatar/yadneshcrop.jpg' },
-        { name: 'Shagun Chaudhari', photo: '/assets/avatar/shaguncrop.jpg' },
+        { name: 'Shagun Chaudhari', photo: '/assets/avatar/Shagun_new.jpg' },
       ],
       members: [
         { name: 'Ayush Patil', photo: '/assets/avatar/Spike showdown_Ayush_Patil.jpg' },
@@ -106,9 +106,9 @@ export default function TeamPage() {
   }
 
   return (
-    <main className="text-white relative overflow-hidden min-h-screen flex items-center justify-center">
+    <main className="text-pink-600 relative overflow-hidden min-h-screen flex items-center justify-center">
       <div className="container mx-auto px-6">
-        <h6 className="text-3xl text-center mb-6" style={{ textShadow: '0 6px 30px rgba(120,40,200,0.6)' }}>
+        <h6 className="text-3xl font-bold text-center mb-6" style={{ textShadow: '0 6px 30px rgba(120,40,200,0.6)' }}>
           Organizing Committee
         </h6>
 
