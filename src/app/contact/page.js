@@ -24,15 +24,17 @@ export default function ContactPage() {
                 </li>
                 <li>
                   <strong>Phone:</strong>
-                  <div><a href="tel:+911234567890" className="text-yellow-100">+91 9579945613</a>
+                  <div><a href="tel:+911234567890" className="text-yellow-100">+91 9579945613 </a>
                   <a href="tel:+911234567890" className="text-yellow-100">     / +91 7218599251</a></div>
                 </li>
                 <li>
                   <strong>Social:</strong>
                   <div className="flex gap-3 mt-2">
-                    <a href="https://www.instagram.com/cresa_pccoe?igsh=YXRtajFsZmwybmxy" target="_blank" className="text-pink-400">Instagram</a>
-                 
+                    <a href="https://www.instagram.com/cresa_pccoe?igsh=YXRtajFsZmwybmxy" target="_blank" className="text-pink-600">Instagram</a>
                   </div>
+                  <div className="flex gap-3 mt-2" >
+                    <a href="https://www.linkedin.com/company/computer-regional-student-association/" target="_blank" className="text-blue-400">LinkedIn</a>
+             </div>
                 </li>
               </ul>
 

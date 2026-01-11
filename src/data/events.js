@@ -12,7 +12,7 @@ const raw = [
     coordinatorName2: 'Om Kawad',
     coordinatorContact2: '8805567177',
     rulebook: '/assets/RULEBOOK/Chakava RuleBook_compressed.pdf',
-    poster: '/assets/Chakava.png',
+    poster: '/assets/POSTERS/Chakava.png',
   },
   {
     title: 'MLMania',
@@ -27,7 +27,7 @@ const raw = [
     coordinatorName2: 'Siddhesh Sarphale',
     coordinatorContact2: '9325084691',
     rulebook: '/assets/RULEBOOK/ML Mania Rulebook (2)_compressed.pdf',
-    poster: '/assets/ML Mania.png',
+    poster: '/assets/POSTERS/ML Mania.png',
   },
   {
     title: 'Sambhashini',
@@ -42,7 +42,7 @@ const raw = [
     coordinatorName2: 'Suhani Thakare',
     coordinatorContact2: '7420072726',
     rulebook: '/assets/RULEBOOK/Sambhashini Rulebook_compressed.pdf',
-    poster: '/assets/Sambhashini.png',
+    poster: '/assets/POSTERS/Sambhashini.png',
   },
   {
     title: 'Spike Showdown',
@@ -57,7 +57,7 @@ const raw = [
     coordinatorName2: 'Yadnesh Patil',
     coordinatorContact2: ' 7249334939',
     rulebook: '/assets/RULEBOOK/Spike_Showdown_Rulebook_compressed.pdf',
-    poster: '/assets/Spike Showdown.png',
+    poster: '/assets/POSTERS/Spike Showdown.png',
   },
   {
     title: 'LogicLamp',
@@ -72,7 +72,7 @@ const raw = [
     coordinatorName2: 'Nihar Salvi',
     coordinatorContact2: ' 8265076942',
     rulebook: '/assets/RULEBOOK/Logic Lamp Rulebook_compressed.pdf',
-    poster: '/assets/Logic lamp.png',
+    poster: '/assets/POSTERS/Logic lamp.png',
   },
 ];
 
