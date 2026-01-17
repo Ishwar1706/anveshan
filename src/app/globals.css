@@ -3,9 +3,9 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-}
 
-@theme inline {
+
+/* @theme inline { */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
@@ -57,7 +57,7 @@ body {
 }
 .site-header a{
   color: #cabcc7;
-  spacing: 0.5px;
+  letter-spacing: 0.5px;
 }
 
 /* Transylvania theme for team cards */
@@ -306,7 +306,7 @@ body {
   background-repeat: no-repeat, no-repeat, no-repeat;
   background-size: cover, cover, cover;
   background-position: center, center, center;
- /* background-attachment: fixed, fixed, fixed; /* keep background fixed */
+ /* background-attachment: fixed, fixed, fixed;  keep background fixed */
   min-height: 100dvh;
   /* subtle top vignette for readability */
   box-shadow: inset 0 120px 160px rgba(0,0,0,0.28), inset 0 -80px 140px rgba(0,0,0,0.12);
@@ -360,29 +360,38 @@ body {
 
 
 /* ===== MOBILE ANDROID SAFE MODE ===== */
-@media (hover: none) and (pointer: coarse) {
+/* ===== ANDROID PHONE SAFE MODE ONLY ===== */
+@media screen and (max-width: 900px) and (hover: none) and (pointer: coarse) {
 
-  /* Disable 3D perspective */
+  .app-background {
+    background-attachment: scroll !important;
+    min-height: 100dvh !important;
+  }
+
   .event-wrapper,
   .room-3d {
     perspective: none !important;
   }
 
-  /* Flatten transforms */
   .event-card,
   .card-surface {
     transform: none !important;
   }
 
-  /* Disable heavy blur */
   .site-header,
   .transylvania-bg,
   .slot .avatar {
     backdrop-filter: none !important;
   }
 
-  /* Prevent GPU layer pinning */
   .launch-content {
     will-change: auto !important;
   }
 }
+
+.event-card {
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: block !important;
+}
+
