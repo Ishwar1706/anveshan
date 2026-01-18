@@ -26,8 +26,8 @@ const raw = [
     coordinatorContact: '7218599251',
     coordinatorName2: 'Siddhesh Sarphale',
     coordinatorContact2: '9325084691',
-    rulebook: '/assets/RULEBOOK/ML Mania Rulebook (2)_compressed.pdf',
-    poster: '/assets/POSTERS/ML Mania.png',
+    rulebook: '/assets/RULEBOOK/ML Mania Rulebook (3)_compressed.pdf',
+    poster: '/assets/POSTERS/ML Mania2.png',
   },
   {
     title: 'Sambhashini',
